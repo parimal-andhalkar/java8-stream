@@ -56,7 +56,7 @@ public class MapUtility {
 	
 	public static Map<String, Integer> sortMapByKeyReverseOrder(Map<String, Integer> map)
 	{
-		LinkedHashMap<String, Integer> sortedMap = map.entrySet().stream().sorted(Map.Entry.<String,Integer>comparingByValue().reversed())
+		LinkedHashMap<String, Integer> sortedMap = map.entrySet().stream().sorted(Map.Entry.<String,Integer>comparingByKey().reversed())
 		.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,(oldValue,newValue)->oldValue,LinkedHashMap::new));
 		return sortedMap;
 	}
